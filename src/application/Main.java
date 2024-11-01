@@ -1,17 +1,17 @@
-package application;
+package application; //pacote
 
 import entities.Triangle;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Main {
+public class Main { //classe
 
-     public static void main(String[] args) {
-         Locale.setDefault(Locale.US);
-         Scanner sc = new Scanner(System.in);
+     public static void main(String[] args) { //metodo (main)
+         Locale.setDefault(Locale.US); //para trocar a separação do ponto flutuante de , para .
+         Scanner sc = new Scanner(System.in); //cria um scanner para poder ter entrada de dados
 
          Triangle x, y;
-         x = new Triangle();
+         x = new Triangle(); //cria as variaveis com o tipo da classe triangulo
          y = new Triangle();
 
          System.out.println("Tamanhos do triangulo X: ");
@@ -23,13 +23,10 @@ public class Main {
          y.b = sc.nextDouble();
          y.c = sc.nextDouble();
 
-         sc.close();
+         sc.close(); // exclui a variavel que contem a função scanner
 
-         double p = (x.a + x.b + x.c) / 2;
-         double areaX = Math.sqrt(p * (p - x.a) * (p - x.b) * (p - x.c));
-
-         p = (y.a + y.b + y.c) / 2;
-         double areaY = Math.sqrt(p * (p - y.a) * (p - y.b) * (p - y.c));
+        double areaX = x.area(); //chama o metodo que calcula a area na classe triangulo
+        double areaY = y.area();
 
          System.out.printf("Area do triangulo X: %.4f%n", areaX);
          System.out.printf("Area do triangulo Y: %.4f%n", areaY);

@@ -1,7 +1,13 @@
-package entities;
+package entities; //pacote
 
-public class Triangle {
+public class Triangle { //classe
     public double a;
     public double b;
     public double c;
+
+    public double area(){ //metodo
+        double p = (a + b + c) / 2.0;
+        double result = Math.sqrt(p * (p - a) * (p - b) * (p - c)); //poderia retornar nessa mesma linha
+        return result;
+    }
 }
